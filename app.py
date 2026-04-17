@@ -321,7 +321,7 @@ with col_reset:
     if st.session_state.complete or st.session_state.running:
         st.write("")
         st.write("")
-        if st.button("↺ New Brief", use_container_width=True):
+        if st.button("↺ New Brief", use_container_width=True, key="reset_top"):
             reset()
 
 st.divider()
@@ -445,7 +445,7 @@ if st.session_state.complete and st.session_state.final_brief:
             use_container_width=True,
         )
     with col_c:
-        if st.button("↺ New Brief", use_container_width=True):
+        if st.button("↺ New Brief", use_container_width=True, key="reset_bottom"):
             reset()
 
     st.divider()
