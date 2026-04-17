@@ -692,6 +692,20 @@ S15 — INVESTMENT PERSPECTIVE
 From Role 7 output — two paragraphs only.
 Leave the human review gate blank: "Human Review: [ ] Confirmed  [ ] Adjusted  [ ] Overridden"
 
+CONFIDENCE TAG HANDLING — critical:
+Confidence tags (VERIFIED, CORROBORATED, FOUNDER-STATED, INFERRED, ABSENT) appear in
+EXACTLY TWO places in the final Brief:
+  1. S9 — Traction Stack: one tag per metric line, in the structured stack only
+  2. S13 — AI Confidence: the full claim list grouped by confidence category
+
+In EVERY OTHER SECTION — S4, S5, S6, S7, S8, S10, S11, S12, S15 — there are NO
+inline confidence tags in prose. Do not write "[FOUNDER-STATED — ...]" or any
+bracketed annotation in running text. If a claim needs qualification, weave it
+naturally into the prose:
+  Write: "The company describes itself as a next-generation merchant platform."
+  Not:   "The company describes itself as... [FOUNDER-STATED — single homepage line]"
+Remove every bracketed confidence annotation from all prose sections before outputting.
+
 VOICE STANDARDS (zero tolerance):
 - No hedging: appears, seems, may, could suggest, there are indications
 - No warm opener: "This is a compelling opportunity"
