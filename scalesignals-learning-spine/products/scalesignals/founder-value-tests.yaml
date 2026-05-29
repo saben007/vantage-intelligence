@@ -1,0 +1,60 @@
+# Founder-value tests for ScaleSignals.
+# Conservative checks that describe what first-value must satisfy. These are
+# descriptive criteria, NOT executable tests and NOT automated.
+
+meta:
+  product: scalesignals
+  purpose: define what "useful and trustworthy to the founder" means
+  executable: false
+  automated: false
+  last_updated: "2026-05-29"
+
+tests:
+  - id: FVT-001
+    name: Credible company source present
+    expectation: At least one credible, citable company source is provided.
+    fails_if: no source, or source not credible/citable.
+
+  - id: FVT-002
+    name: Evidence-grounded interpretation
+    expectation: The company interpretation is traceable to the cited source(s).
+    fails_if: interpretation asserts claims not supported by cited evidence.
+
+  - id: FVT-003
+    name: Three credible relevant providers or pathways
+    expectation: >-
+      Three credible South African / Africa-relevant healthcare capital
+      providers or funding pathways are identified.
+    fails_if: fewer than three, or any lacks credible relevance to the geography/sector.
+
+  - id: FVT-004
+    name: Transparent evidence and uncertainty
+    expectation: Evidence is shown and uncertainty is stated explicitly.
+    fails_if: confidence is implied beyond the evidence, or uncertainty is hidden.
+
+  - id: FVT-005
+    name: At least one safe serious next action
+    expectation: >-
+      A next action is offered that is both safe (no premature commitment or
+      contact) and serious (materially advances the raise).
+    fails_if: no next action, or the action is unsafe or trivial.
+
+  - id: FVT-006
+    name: No provider contact
+    expectation: No provider is contacted as part of delivering value.
+    fails_if: any outreach occurs.
+
+  - id: FVT-007
+    name: No unsupported fit claim
+    expectation: Any stated fit between company and provider is evidence-backed.
+    fails_if: a fit is claimed without supporting accepted evidence.
+
+  - id: FVT-008
+    name: Boundary integrity
+    expectation: No founder-private data flows toward Vantage.
+    fails_if: any founder-private material crosses into investor-side use.
+
+evaluation_note: >-
+  Until an approved evaluation capability exists, these tests are applied by
+  human judgement and recorded in pilots/apius/outcome-log.yaml and, where
+  relevant, learning/failures.ndjson.

@@ -1,0 +1,42 @@
+# Apius pilot — company evidence (pilot-scoped).
+# Only conservatively-stated, pilot-scoped facts. No founder-private material is
+# ingested here. Confidence never exceeds cited evidence.
+
+meta:
+  pilot: apius
+  company: Apius Pharmacy and Healthcare Services
+  data_class: pilot-scoped
+  contains_founder_private_material: false
+  last_updated: "2026-05-29"
+  note: >-
+    This file holds the conservative, evidence-grounded company picture used in
+    the pilot. Specific source documents are referenced, not pasted, and no
+    confidential submission content is stored here in LS0.
+
+company_profile:
+  name: Apius Pharmacy and Healthcare Services
+  sector: healthcare / pharmacy
+  geography: South Africa
+  status: pilot subject
+
+credible_sources:
+  # At least one credible company source is required for first-value (FVT-001).
+  - id: SRC-PLACEHOLDER-001
+    status: to-be-recorded
+    description: >-
+      Placeholder for the credible company source to be cited in the pilot.
+      Recorded here only once a public/citable or appropriately-permissioned,
+      pilot-scoped source is confirmed. No content is fabricated.
+    evidence_class: pending
+
+interpretation:
+  status: pending-evidence
+  rule: >-
+    The company interpretation (FVT-002) must be traceable to cited sources and
+    is not recorded until at least one credible source is confirmed.
+
+uncertainty:
+  what_is_known: company name, sector and geography (pilot context)
+  what_is_unknown: detailed, evidenced company specifics pending source confirmation
+  confidence: low
+  why_confidence_is_capped: sources not yet recorded in this read-only scaffold

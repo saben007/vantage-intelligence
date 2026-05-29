@@ -1,0 +1,65 @@
+# Assumptions register.
+# Major assumptions the system currently relies on that require later evidence.
+# Each is held provisionally. Listing an assumption does NOT assert it is true.
+
+meta:
+  last_updated: "2026-05-29"
+  principle: >-
+    Assumptions are made explicit so they can be tested and, if contradicted,
+    revised via the governing-learning loop (learning/system-loops.md).
+
+assumptions:
+  - id: A-001
+    statement: >-
+      Named, actionable providers matter more to founder value than route
+      diagnosis alone.
+    status: untested
+    why_it_matters: >-
+      Determines whether first-value should emphasise specific provider names or
+      a diagnosis of which routes are worth pursuing.
+    evidence_needed: founder response to named providers vs. route diagnosis in pilot outcomes.
+    related: [pilots/apius/provider-candidates.yaml, products/scalesignals/founder-value-tests.yaml]
+
+  - id: A-002
+    statement: >-
+      The existence of a public application portal indicates a worthwhile
+      funding route.
+    status: doubted
+    why_it_matters: >-
+      If false, visible/easy routes (e.g. portals) could mislead toward
+      low-value paths and away from better but less visible ones.
+    evidence_needed: comparison of portal-visible routes vs. realised funding outcomes/friction.
+    related: [provider-intelligence/evidence-rules.yaml ER-004/ER-005]
+
+  - id: A-003
+    statement: >-
+      Apius receives useful next-action value from the initial provider set
+      (HAVAÍC, AAIC, IDC SBU; Green Rock excluded).
+    status: untested
+    why_it_matters: >-
+      The pilot's credibility depends on whether the initial set actually yields
+      a safe, serious next action for Apius.
+    evidence_needed: pilot outcome scoring against FVT-005 with founder feedback.
+    related: [pilots/apius/provider-candidates.yaml, pilots/apius/missing-evidence.yaml]
+
+  - id: A-004
+    statement: >-
+      Institutional (Vantage) intelligence can later be developed without
+      weakening founder trust.
+    status: untested
+    why_it_matters: >-
+      The whole two-product strategy depends on keeping founder trust intact
+      while building an investor-facing layer.
+    evidence_needed: >-
+      a tested consent/privacy/governance architecture plus evidence that
+      founders' trust is not degraded by Vantage's existence.
+    related: [charter/product-boundaries.md, charter/data-and-consent-policy.md]
+
+  - id: A-005
+    statement: >-
+      Reducing Ben's coordination burden via this Learning Spine does not
+      reduce decision quality or his authority.
+    status: untested
+    why_it_matters: governs whether automation should expand beyond LS0.
+    evidence_needed: outcomes after any LS1+ capability is approved and used.
+    related: [charter/autonomy-policy.md]

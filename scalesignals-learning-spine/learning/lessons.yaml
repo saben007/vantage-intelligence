@@ -1,0 +1,24 @@
+# Lessons register.
+# Durable lessons distilled from decisions, contradictions and failures.
+# A lesson is recorded only when it is genuinely earned from evidence.
+# None are recorded yet in LS0.
+
+meta:
+  last_updated: "2026-05-29"
+  principle: >-
+    Lessons are conservative generalisations backed by recorded events. They are
+    not opinions and not strategy invented here.
+
+lessons: []
+
+# Template for a future lesson (illustrative only):
+# lessons:
+#   - id: L-001
+#     lesson: short, durable statement of what was learned
+#     derived_from:
+#       - learning/decisions.ndjson:<decision id>
+#       - learning/failures.ndjson:<failure id>
+#       - learning/contradictions.ndjson:<contradiction id>
+#     applies_to: [scalesignals | vantage | provider-intelligence | pilot | governance]
+#     confidence: low | medium | high
+#     date: "YYYY-MM-DD"

@@ -1,0 +1,35 @@
+# Provider intelligence — current state (governance only).
+# This file records governance posture. It does NOT approve, rank, endorse, or
+# recommend any provider, and it represents NO contact or outreach.
+
+meta:
+  domain: provider-intelligence
+  mode: governance-only
+  represents_approval: false
+  represents_contact: false
+  is_a_crm: false
+  last_updated: "2026-05-29"
+
+posture:
+  approvals_made: none
+  promotions_made: none
+  outreach: none
+  endorsements: none
+  evidence_rules: defined (see evidence-rules.yaml)
+  promotion_gates: defined (see provider-promotion-gates.yaml)
+
+scope_note: >-
+  Provider analysis exists only as candidate assessment under evidence rules,
+  currently within the Apius pilot (pilots/apius/provider-candidates.yaml).
+  Naming a provider as a candidate is NOT endorsement and NOT a fit claim.
+
+current_pilot_context:
+  pilot: Apius Pharmacy and Healthcare Services
+  geography_focus: South Africa / Africa-relevant
+  sector_focus: healthcare / pharmacy
+  candidates_recorded_in: pilots/apius/provider-candidates.yaml
+
+boundaries:
+  provider_data_class: public, citable by default
+  private_provider_material: not ingested
+  flow_to_vantage: prohibited without separate approved architecture

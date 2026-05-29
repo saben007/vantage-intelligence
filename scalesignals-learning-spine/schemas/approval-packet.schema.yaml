@@ -1,0 +1,56 @@
+# Schema: approval packet (TEMPLATE ONLY).
+# Conservative shape for a future approval packet that AI may DRAFT (never send
+# or self-approve) into handoffs/approval-packets/. Template only; no automation.
+
+schema:
+  name: approval-packet
+  version: 0
+  status: template-only
+  drafting_only: true
+  note: >-
+    An approval packet assembles, for Ben, everything needed to make ONE
+    decision: the proposal, its evidence, its risks, and the boundaries it
+    respects. Drafting a packet has no effect; only Ben's recorded approval acts.
+
+fields:
+  meta:
+    packet_id: {type: string, required: true}
+    drafted_by: {type: string, required: true, example: "claude-code"}
+    drafted_at: {type: string, required: true}
+    spine_phase: {type: string, required: true, example: "LS0"}
+    queue_ref: {type: string, required: true, description: matching item in state/approval-queue.yaml}
+  request:
+    title: {type: string, required: true}
+    decision_needed: {type: string, required: true, description: the single yes/no or choice asked of Ben}
+    tier:
+      type: enum
+      required: true
+      values: [tier3-requires-approval]
+      description: packets exist for approval-tier actions only
+  proposal:
+    summary: {type: string, required: true}
+    proposed_action: {type: string, required: true}
+    reversible: {type: boolean, required: true}
+  evidence:
+    type: list
+    item:
+      claim: {type: string}
+      source: {type: string}
+      confidence: {type: enum, values: [low, medium, high]}
+  risks:
+    type: list
+    item:
+      risk: {type: string}
+      trust_impact: {type: string, description: effect on founder/institutional trust}
+      mitigation: {type: string}
+  boundaries_check:
+    respects_product_separation: {type: boolean, required: true}
+    no_founder_private_to_vantage: {type: boolean, required: true}
+    no_product_repo_modification: {type: boolean, required: true}
+    no_provider_contact_or_implied_approval: {type: boolean, required: true}
+  recommendation:
+    option_presented: {type: string, required: false, description: a clearly-labelled recommendation, if any}
+    alternatives: {type: list}
+  decision:
+    ben_decision: {type: enum, values: [pending, approved, rejected, deferred], required: true, default: pending}
+    decision_record_ref: {type: string, required: false, description: DR id once decided}

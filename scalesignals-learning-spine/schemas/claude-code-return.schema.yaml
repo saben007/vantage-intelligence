@@ -1,0 +1,56 @@
+# Schema: Claude Code return (TEMPLATE ONLY).
+# Describes the conservative shape a future Claude Code task-return SHOULD take
+# when (and only when) an ingestion capability is separately approved.
+# This file defines a template. It implements NO ingestion and NO automation.
+
+schema:
+  name: claude-code-return
+  version: 0
+  status: template-only
+  ingestion_implemented: false
+  note: >-
+    A return conforming to this schema is an inert artefact placed (manually,
+    in a future approved phase) in inbox/claude-code/. Nothing reads or acts on
+    it automatically.
+
+fields:
+  meta:
+    return_id: {type: string, required: true, description: stable id for this return}
+    produced_by: {type: string, required: true, example: "claude-code"}
+    produced_at: {type: string, required: true, description: ISO date/time}
+    task_ref: {type: string, required: true, description: which authorised task this answers}
+    spine_phase: {type: string, required: true, example: "LS0"}
+  summary:
+    what_was_done: {type: string, required: true}
+    what_was_not_done: {type: string, required: true, description: explicit scope boundaries respected}
+  changes_proposed:
+    type: list
+    required: true
+    description: >-
+      PROPOSED changes only. Drafts, never applied. Each item references a file
+      or area and the intended change. No change is executed from this return.
+    item:
+      target: {type: string, required: true}
+      change_summary: {type: string, required: true}
+      reversible: {type: boolean, required: true}
+  evidence:
+    type: list
+    description: sources / reasoning supporting the work, with uncertainty.
+    item:
+      claim: {type: string}
+      source: {type: string}
+      confidence: {type: enum, values: [low, medium, high]}
+  quality_gates:
+    gates_checked: {type: list, description: which gates were considered}
+    gates_passed: {type: list}
+    gates_failed: {type: list}
+  boundaries_respected:
+    no_product_repo_modified: {type: boolean, required: true}
+    no_private_data_used: {type: boolean, required: true}
+    no_external_calls: {type: boolean, required: true}
+  approval:
+    requires_ben_approval: {type: boolean, required: true, default: true}
+    approval_packet_ref: {type: string, required: false}
+  open_questions:
+    type: list
+    description: anything ambiguous requiring Ben's decision.

@@ -1,0 +1,47 @@
+# Provider promotion gates.
+# Defines the gates a provider candidate must pass before its status may CHANGE.
+# Passing gates is necessary but NOT sufficient: promotion still requires Ben's
+# explicit approval. This file promotes nothing by itself.
+
+meta:
+  domain: provider-intelligence
+  last_updated: "2026-05-29"
+  principle: >-
+    Gates make promotion conservative and auditable. No gate, and no
+    combination of gates, auto-promotes a provider. Human approval is required.
+
+statuses:
+  - candidate: identified for analysis; no fit claim implied
+  - assessed: evidence reviewed under evidence-rules; gaps recorded
+  - action-candidate: assessed AND proposed (to Ben) as a possible action route
+  - approved-route: reserved; requires explicit Ben approval (none exist)
+
+statuses_note: >-
+  "approved-route" is intentionally unused in LS0. Reaching it is a Tier-3
+  approval decision, not an automated outcome.
+
+gates:
+  - id: PG-001
+    name: Evidence sufficiency
+    requires: claims meet evidence-rules (ER-001..ER-008) with stated uncertainty.
+  - id: PG-002
+    name: Geography fit
+    requires: evidenced relevance to South Africa / Africa for the pilot context.
+  - id: PG-003
+    name: Sector fit
+    requires: evidenced relevance to healthcare / pharmacy.
+  - id: PG-004
+    name: Route viability assessed
+    requires: >-
+      funding criteria, likely friction, funding amount, use of funds and
+      evidence burden are assessed — not assumed from portal existence.
+  - id: PG-005
+    name: Safety
+    requires: no provider contact and no unsupported fit claim implied.
+  - id: PG-006
+    name: Human approval
+    requires: explicit Ben approval recorded in learning/decisions.ndjson.
+
+promotion_rule: >-
+  A status change beyond "assessed" requires ALL applicable gates to pass AND
+  PG-006 (human approval). AI may only DRAFT a proposed promotion.

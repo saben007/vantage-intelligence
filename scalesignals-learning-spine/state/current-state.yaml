@@ -1,0 +1,67 @@
+# Current state of the ScaleSignals Learning Spine and the work it governs.
+# Conservative and explicit by default. This file describes reality, not hopes.
+
+meta:
+  repository: scalesignals-learning-spine
+  phase: LS0
+  phase_meaning: >-
+    Initial read-only scaffolding. Governance and memory only. No execution,
+    no automation, no data ingestion, no external connections.
+  last_updated: "2026-05-29"
+  maintained_by: Ben (approver)
+  notes: >-
+    This repository does not modify any product repository or active product
+    branch. It contains markdown, YAML and NDJSON only.
+
+spine:
+  execution_capability: none
+  automation_capability: none
+  data_ingestion: none
+  external_connections: none
+  api_or_model_orchestration: none
+  telemetry: none
+  status: scaffolding-complete-pending-review
+
+products:
+  scalesignals:
+    audience: founders raising capital
+    governing_promise: >-
+      ScaleSignals runs the work around your raise, while you run your company.
+    stage: private controlled pilot (Apius)
+    mirror: products/scalesignals/
+    boundary: founder-private; never flows to Vantage
+  vantage:
+    audience: GPs, LPs, DFIs, family offices, allocators, strategic investment teams
+    aim: >-
+      Support better capital-deployment decisions using source-grounded,
+      permissioned and explainable intelligence.
+    stage: institutional-facing layer; not built through this repository
+    mirror: products/vantage/
+    boundary: investor-facing; never receives founder-private material
+
+pilot:
+  name: Apius Pharmacy and Healthcare Services
+  type: private controlled pilot
+  record: pilots/apius/
+  first_value_target:
+    - one credible company source
+    - evidence-grounded company interpretation
+    - three credible South African / Africa-relevant healthcare capital providers or pathways
+    - transparent evidence and explicit uncertainty
+    - at least one safe serious next action
+    - no provider contact
+    - no unsupported fit claim
+  status: defined; validation not yet complete
+
+provider_intelligence:
+  status: governance-only (evidence rules + promotion gates defined)
+  approvals_made: none
+  outreach: none
+
+boundaries:
+  scalesignals_vantage_merge: prohibited
+  founder_private_to_investor_side: prohibited without separate approved consent/privacy/governance architecture
+  product_repo_modification: prohibited
+
+open_questions:
+  see: learning/assumptions.yaml

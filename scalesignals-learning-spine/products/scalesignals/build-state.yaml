@@ -1,0 +1,39 @@
+# ScaleSignals build state (conservative mirror).
+# Describes only what the Learning Spine can state conservatively. Not the
+# product's source of truth. No founder-private detail here.
+
+meta:
+  product: scalesignals
+  audience: founders raising capital
+  mirror_only: true
+  last_updated: "2026-05-29"
+
+stage: private-controlled-pilot
+pilot: Apius Pharmacy and Healthcare Services
+
+governing_promise: >-
+  ScaleSignals runs the work around your raise, while you run your company.
+
+first_value_definition:
+  - one credible company source
+  - evidence-grounded company interpretation
+  - three credible South African / Africa-relevant healthcare capital providers or pathways
+  - transparent evidence and explicit uncertainty
+  - at least one safe serious next action
+  - no provider contact
+  - no unsupported fit claim
+
+first_value_status: defined-not-yet-validated
+
+boundaries:
+  founder_private_data: stays within ScaleSignals; never to Vantage
+  provider_contact: prohibited
+  fit_claims: only when supported by accepted evidence
+
+learning_spine_relationship:
+  this_repo_modifies_product: false
+  this_repo_ingests_founder_data: false
+  notes: governance and memory only
+
+open_assumptions:
+  see: learning/assumptions.yaml

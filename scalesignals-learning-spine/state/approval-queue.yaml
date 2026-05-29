@@ -1,0 +1,34 @@
+# Approval queue.
+# Items awaiting Ben's explicit decision. Nothing here is acted upon until
+# moved to authorised-work.yaml with an approval. AI may draft entries here;
+# it may never self-approve.
+
+meta:
+  phase: LS0
+  rule: >-
+    Anything ambiguous or state-changing routes here first. Drafting an item
+    here has no effect on the world.
+  last_updated: "2026-05-29"
+
+queue:
+  # No items are pending in LS0. The entries below are illustrative of the
+  # decisions that will eventually arrive here, recorded as 'example' so they
+  # are clearly NOT live requests.
+  - id: EXAMPLE-Q-001
+    status: example
+    title: Define LS1 capability (e.g. drafting approval packets)
+    description: >-
+      A future request to allow AI to draft (not send) approval packets from
+      existing records. Would require expanding the autonomy policy.
+    decision: none
+
+  - id: EXAMPLE-Q-002
+    status: example
+    title: Assess IDC Chemicals, Medical & Industrial Mineral Products SBU route
+    description: >-
+      A future request to evaluate funding criteria, likely friction, funding
+      amount, use of funds and evidence burden for the IDC SBU route. Analysis
+      only; no contact.
+    decision: none
+
+pending_count: 0

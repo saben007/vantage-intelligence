@@ -1,0 +1,45 @@
+# Schema: Codex audit return (TEMPLATE ONLY).
+# Conservative shape for a future Codex audit/review return. Template only.
+# Implements NO ingestion, NO automation, NO model/API connection.
+
+schema:
+  name: codex-audit-return
+  version: 0
+  status: template-only
+  ingestion_implemented: false
+  note: >-
+    A conforming return is an inert artefact placed (manually, in a future
+    approved phase) in inbox/codex/. It is reviewed by a human; nothing acts on
+    it automatically.
+
+fields:
+  meta:
+    return_id: {type: string, required: true}
+    produced_by: {type: string, required: true, example: "codex"}
+    produced_at: {type: string, required: true}
+    audit_target_ref: {type: string, required: true, description: what was audited (a draft/proposal, NOT a product repo)}
+    spine_phase: {type: string, required: true, example: "LS0"}
+  audit_scope:
+    in_scope: {type: string, required: true}
+    out_of_scope: {type: string, required: true}
+  findings:
+    type: list
+    required: true
+    item:
+      id: {type: string, required: true}
+      severity: {type: enum, values: [info, low, medium, high], required: true}
+      finding: {type: string, required: true}
+      evidence: {type: string, required: true, description: where/why, with uncertainty}
+      suggested_fix: {type: string, required: false, description: PROPOSAL only}
+  assurance:
+    no_changes_applied: {type: boolean, required: true, default: true}
+    no_product_repo_touched: {type: boolean, required: true}
+    no_external_calls: {type: boolean, required: true}
+  overall_assessment:
+    summary: {type: string, required: true}
+    confidence: {type: enum, values: [low, medium, high], required: true}
+    blocking_issues: {type: list}
+  approval:
+    requires_ben_approval: {type: boolean, required: true, default: true}
+  open_questions:
+    type: list

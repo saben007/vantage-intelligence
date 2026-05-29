@@ -1,0 +1,1 @@
+{"type":"_meta","schema":"schemas/failure-event.schema.yaml","note":"Append-only failure ledger. Records execution failures, quality-gate misses, and governance breaches (including boundary or autonomy-policy violations). Lines with type _meta are documentation. No failures recorded yet at LS0."}

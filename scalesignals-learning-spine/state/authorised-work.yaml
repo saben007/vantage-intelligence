@@ -1,0 +1,36 @@
+# Authorised work.
+# ONLY work explicitly listed here is authorised. Everything else is either
+# blocked (see blocked-work.yaml) or pending approval (see approval-queue.yaml).
+
+meta:
+  phase: LS0
+  principle: >-
+    Authorisation is narrow and explicit. Absence of an item here means it is
+    NOT authorised.
+  last_updated: "2026-05-29"
+
+authorised:
+  - id: LS0-001
+    title: Create the initial Learning Spine LS0 scaffolding
+    scope: >-
+      Create the read-only directory and file structure for the
+      scalesignals-learning-spine repository, containing markdown, YAML and
+      NDJSON only.
+    includes:
+      - charter documents (north star, boundaries, autonomy, data/consent)
+      - declared state files (current/authorised/blocked/approval-queue)
+      - conservative product mirrors for ScaleSignals and Vantage
+      - provider-intelligence governance (evidence rules, promotion gates)
+      - Apius pilot record (purpose, evidence, candidates, gaps, outcomes)
+      - learning ledgers and system-loops documentation
+      - placeholder inbox / handoffs / evals folders
+      - conservative schema templates for future returns and records
+    excludes:
+      - any executable script or dependency
+      - any API, model, or external connection
+      - any automation or scheduled job
+      - any ingestion of private founder or provider material
+      - any modification of a product repository or active product branch
+      - any provider contact, promotion, or implied approval
+    status: complete
+    authorised_by: Ben

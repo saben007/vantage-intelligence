@@ -1,0 +1,45 @@
+# Institutional quality tests for Vantage.
+# Conservative, descriptive criteria for what institutional-grade intelligence
+# must satisfy. NOT executable and NOT automated.
+
+meta:
+  product: vantage
+  purpose: define what "defensible to an institutional allocator" means
+  executable: false
+  automated: false
+  last_updated: "2026-05-29"
+
+tests:
+  - id: IQT-001
+    name: Source-grounded
+    expectation: Every material claim is traceable to a cited, checkable source.
+    fails_if: any claim cannot be traced to a source.
+
+  - id: IQT-002
+    name: Permissioned
+    expectation: Every input respects the permission/consent attached to it.
+    fails_if: any input is used beyond its permitted purpose.
+
+  - id: IQT-003
+    name: Explainable
+    expectation: Reasoning, assumptions and limitations are visible to the user.
+    fails_if: conclusions are presented without their basis or caveats.
+
+  - id: IQT-004
+    name: Uncertainty stated
+    expectation: Confidence levels and gaps are explicit.
+    fails_if: certainty is implied beyond what evidence supports.
+
+  - id: IQT-005
+    name: No founder-private leakage
+    expectation: No founder-private ScaleSignals material informs Vantage output.
+    fails_if: any founder-private input is present, directly or derived.
+
+  - id: IQT-006
+    name: No premature deployment claim
+    expectation: Intelligence supports a decision; it does not assert a decision.
+    fails_if: output implies an allocation recommendation beyond its evidence.
+
+evaluation_note: >-
+  Until an approved evaluation capability exists, these tests are applied by
+  human judgement. Placeholder suite location: evals/vantage-evidence-safety/.

@@ -1,0 +1,63 @@
+# Blocked work.
+# These activities are explicitly NOT permitted in the current phase. Each is
+# blocked until a separate, explicit approval (and, where noted, an approved
+# governance/privacy architecture) exists.
+
+meta:
+  phase: LS0
+  default_posture: >-
+    If an activity is not in authorised-work.yaml, treat it as blocked or
+    pending approval. The items below are called out because they are the
+    high-risk activities this repository must never drift into.
+  last_updated: "2026-05-29"
+
+blocked:
+  - id: BLK-001
+    activity: Autonomous deployment / autonomous execution
+    reason: No autonomous execution is permitted in any product or system.
+    unblock_requires: explicit approval + expanded autonomy policy
+
+  - id: BLK-002
+    activity: Provider contact or outreach
+    reason: First-value explicitly excludes provider contact.
+    unblock_requires: explicit Ben approval per provider and per purpose
+
+  - id: BLK-003
+    activity: Production / product modification
+    reason: This repository must not modify ScaleSignals, Vantage, or any product repo/branch.
+    unblock_requires: explicit approval; work would occur in the product repo, not here
+
+  - id: BLK-004
+    activity: Founder or provider promotion / implied approval or fit
+    reason: No unsupported fit claim; no provider may be implied as approved.
+    unblock_requires: accepted evidence passing promotion gates + Ben approval
+
+  - id: BLK-005
+    activity: ScaleSignals / Vantage integration or data mixing
+    reason: Founder-private material must not become investor-side intelligence.
+    unblock_requires: separately approved consent, privacy and governance architecture
+
+  - id: BLK-006
+    activity: Model / API orchestration
+    reason: No model or API connections, routing, or credentials in this phase.
+    unblock_requires: explicit approval + security and data review
+
+  - id: BLK-007
+    activity: Telemetry collection
+    reason: No automatic collection of usage or behavioural data.
+    unblock_requires: explicit approval + data/consent review
+
+  - id: BLK-008
+    activity: App feature development through this repository
+    reason: This is a governance/memory layer, not a product; features belong in product repos.
+    unblock_requires: not applicable here; build features in the product repository
+
+  - id: BLK-009
+    activity: Ingestion of private founder or provider material into this repo
+    reason: Only public and pilot-scoped, conservatively-derived data is allowed now.
+    unblock_requires: approved data/consent + privacy architecture
+
+  - id: BLK-010
+    activity: Creating scripts, installing dependencies, or wiring automations here
+    reason: LS0 is markdown / YAML / NDJSON only.
+    unblock_requires: explicit approval for a defined, reviewed capability

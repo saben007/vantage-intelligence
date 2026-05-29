@@ -1,0 +1,49 @@
+# Apius pilot — missing evidence.
+# Known gaps that currently cap confidence. Recorded openly so uncertainty is
+# never hidden. An item here means "not yet established", not "negative".
+
+meta:
+  pilot: apius
+  last_updated: "2026-05-29"
+  principle: missing evidence is stated, not papered over.
+
+gaps:
+  - id: ME-001
+    about: company source
+    missing: a confirmed credible, citable (or appropriately permissioned, pilot-scoped) company source.
+    caps: FVT-001, FVT-002 (interpretation)
+    severity: high
+
+  - id: ME-002
+    about: HAVAÍC
+    missing: controlled validation of HAVAÍC as a route for Apius.
+    caps: any status change beyond action-candidate-proposed
+    severity: high
+
+  - id: ME-003
+    about: AAIC Africa Healthcare Fund
+    missing: clarity on the public capital intake route and its accessibility.
+    caps: route viability (PG-004)
+    severity: medium
+
+  - id: ME-004
+    about: IDC Chemicals, Medical & Industrial Mineral Products SBU
+    missing: funding criteria, likely friction, funding amount, use of funds, evidence burden.
+    caps: route viability (PG-004); conditional status cannot improve without this
+    severity: medium
+
+  - id: ME-005
+    about: provider set sufficiency
+    missing: confirmation that the accepted, evidenced set yields three credible providers/pathways.
+    caps: FVT-003
+    severity: medium
+
+  - id: ME-006
+    about: safe next action
+    missing: a confirmed safe, serious next action grounded in accepted evidence.
+    caps: FVT-005
+    severity: medium
+
+note: >-
+  These gaps tie directly to assumptions in learning/assumptions.yaml
+  (A-001..A-004). Closing a gap is a logged event, not an automatic upgrade.

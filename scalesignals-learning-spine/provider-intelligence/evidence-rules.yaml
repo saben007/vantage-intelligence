@@ -1,0 +1,50 @@
+# Provider intelligence — evidence rules.
+# Defines what counts as acceptable evidence and how uncertainty must be stated.
+# These rules govern analysis; they do not approve or promote any provider.
+
+meta:
+  domain: provider-intelligence
+  last_updated: "2026-05-29"
+  principle: >-
+    Claims about a provider may not exceed the evidence cited. Uncertainty is
+    stated explicitly. Absence of evidence is never treated as a positive.
+
+evidence_classes:
+  strong:
+    description: Provider's own public, current statements of mandate/criteria/geography, or official records.
+    examples: [official website mandate page, official fund documentation, regulatory filing]
+  moderate:
+    description: Credible third-party reporting consistent with provider's public positioning.
+    examples: [reputable press, recognised databases]
+  weak:
+    description: Indirect, dated, or single-source signals.
+    examples: [old article, unverified directory entry]
+  insufficient:
+    description: Rumour, inference without source, or assumption.
+    treatment: not usable to support a claim.
+
+rules:
+  - id: ER-001
+    rule: Every provider claim must cite at least one evidence item with a class.
+  - id: ER-002
+    rule: A claim's strength may not exceed its strongest cited evidence class.
+  - id: ER-003
+    rule: Geography and sector fit must be evidenced, not assumed from a name.
+  - id: ER-004
+    rule: Public application portal existence is NOT, by itself, evidence that a route is worthwhile (see assumptions A-002).
+  - id: ER-005
+    rule: Route visibility (clear public intake) does not make a route commercially preferable.
+  - id: ER-006
+    rule: Uncertainty and missing evidence must be stated alongside any claim.
+  - id: ER-007
+    rule: No evidence item may be founder-private; provider evidence is public/citable.
+  - id: ER-008
+    rule: Negative findings (e.g. geography mismatch) are recorded with the same rigour as positive ones.
+
+uncertainty_statement:
+  required_fields:
+    - what_is_known
+    - source_and_class
+    - what_is_unknown
+    - confidence: [low, medium, high]
+    - why_confidence_is_capped

@@ -1,0 +1,34 @@
+# Vantage build state (conservative mirror).
+# Describes only what the Learning Spine can state conservatively. Not the
+# product's source of truth. No founder-private detail here, ever.
+
+meta:
+  product: vantage
+  audience: GPs, LPs, DFIs, family offices, allocators, strategic investment teams
+  mirror_only: true
+  last_updated: "2026-05-29"
+
+aim: >-
+  Support better capital-deployment decisions using source-grounded,
+  permissioned and explainable intelligence.
+
+stage: separate-institutional-layer-not-built-through-this-repo
+
+quality_principles:
+  - source_grounded: every claim traceable to a source
+  - permissioned: respects the permissions attached to each input
+  - explainable: limitations and uncertainty stated, not hidden
+
+boundaries:
+  receives_founder_private_data: false
+  receives_apius_pilot_evidence: false
+  merge_with_scalesignals: prohibited
+  crossing_requires: separately approved consent, privacy and governance architecture
+
+learning_spine_relationship:
+  this_repo_modifies_product: false
+  this_repo_builds_vantage_features: false
+  notes: boundary preservation and assumption tracking only
+
+open_assumptions:
+  see: learning/assumptions.yaml

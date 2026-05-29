@@ -1,0 +1,36 @@
+# Schema: failure event (TEMPLATE).
+# Shape of a single record in learning/failures.ndjson (one JSON object/line).
+# Captures execution failures, quality-gate misses, and governance breaches.
+
+schema:
+  name: failure-event
+  version: 0
+  status: template
+  applies_to: learning/failures.ndjson
+  note: >-
+    Recording a failure is a healthy act, not a blame act. Failures feed both
+    learning loops (see learning/system-loops.md).
+
+fields:
+  id: {type: string, required: true, description: e.g. FE-0001}
+  date: {type: string, required: true}
+  category:
+    type: enum
+    required: true
+    values:
+      - execution            # a task did not complete as intended
+      - quality-gate-miss    # output failed a defined gate
+      - governance-breach    # an autonomy-policy or data/consent violation
+      - boundary-breach      # ScaleSignals/Vantage data mixing or product modification
+      - evidence-weakness    # overclaiming or unsupported fit/confidence
+  summary: {type: string, required: true}
+  what_happened: {type: string, required: true}
+  impact: {type: string, required: true, description: who/what was affected, incl. trust impact}
+  detected_by: {type: string, required: true}
+  related_gate_or_policy: {type: string, required: false, description: e.g. FVT-007, BLK-005}
+  corrective_action: {type: string, required: false, description: PROPOSED follow-up}
+  becomes_contradiction: {type: boolean, required: false, description: true if it conflicts with stated purpose/assumptions}
+  severity: {type: enum, values: [low, medium, high, critical], required: true}
+
+constraints:
+  - Trust-destruction risks (weak evidence, slow/low-value routes, private-data misuse) are always at least 'high'.

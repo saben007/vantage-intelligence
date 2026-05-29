@@ -1,0 +1,35 @@
+# Schema: decision record (TEMPLATE).
+# Shape of a single record in learning/decisions.ndjson (one JSON object/line).
+# Used to preserve the "why" behind each decision. Template/spec only.
+
+schema:
+  name: decision-record
+  version: 0
+  status: template
+  applies_to: learning/decisions.ndjson
+  note: >-
+    Each non-_meta line in decisions.ndjson should conform to this shape.
+    Records are append-only; supersession is itself a new decision.
+
+fields:
+  id: {type: string, required: true, description: e.g. DR-0001}
+  date: {type: string, required: true, description: ISO date}
+  title: {type: string, required: true}
+  decision: {type: string, required: true, description: what was decided}
+  reasoning: {type: string, required: true, description: the why}
+  made_by: {type: string, required: true, example: "Ben"}
+  scope:
+    type: enum
+    required: true
+    values: [governance, scalesignals, vantage, provider-intelligence, pilot, both-products]
+  status:
+    type: enum
+    required: true
+    values: [proposed, approved, assessed, assessed-conditional, excluded-on-current-evidence, superseded]
+  reversible: {type: boolean, required: true}
+  supersedes: {type: string, required: false, description: id of a prior decision this replaces}
+  related: {type: list, required: false, description: file paths or record ids}
+
+constraints:
+  - AI may DRAFT a decision record (status proposed); approval (status approved) is Ben's.
+  - Records are never edited in place to reverse meaning; add a superseding record instead.

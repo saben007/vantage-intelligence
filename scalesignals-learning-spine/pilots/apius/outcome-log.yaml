@@ -1,0 +1,30 @@
+# Apius pilot — outcome log.
+# Append-only record of what the pilot delivered and how it scored against the
+# first-value tests (products/scalesignals/founder-value-tests.yaml).
+# No outcomes are recorded yet; validation is not complete.
+
+meta:
+  pilot: apius
+  last_updated: "2026-05-29"
+  status: no-validated-outcomes-yet
+  principle: outcomes are recorded conservatively, with evidence and uncertainty.
+
+outcomes: []
+
+# Template for a future outcome entry (illustrative only; not a real outcome):
+# outcomes:
+#   - id: OUT-001
+#     date: "YYYY-MM-DD"
+#     summary: short description of what was delivered
+#     first_value_scores:
+#       FVT-001: pass | fail | partial
+#       FVT-002: pass | fail | partial
+#       FVT-003: pass | fail | partial
+#       FVT-004: pass | fail | partial
+#       FVT-005: pass | fail | partial
+#       FVT-006: pass | fail | partial
+#       FVT-007: pass | fail | partial
+#       FVT-008: pass | fail | partial
+#     evidence_refs: []
+#     uncertainty: stated explicitly
+#     follow_ups: links to decisions / contradictions / failures as relevant

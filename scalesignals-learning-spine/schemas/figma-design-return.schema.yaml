@@ -1,0 +1,44 @@
+# Schema: Figma design return (TEMPLATE ONLY).
+# Conservative shape for a future Figma design-handoff return. Template only.
+# Implements NO Figma connection, NO ingestion, NO automation.
+
+schema:
+  name: figma-design-return
+  version: 0
+  status: template-only
+  ingestion_implemented: false
+  figma_connected: false
+  note: >-
+    A conforming return is an inert artefact placed (manually, in a future
+    approved phase) in inbox/figma/. It records design intent for human review;
+    nothing renders, syncs, or builds from it automatically.
+
+fields:
+  meta:
+    return_id: {type: string, required: true}
+    produced_by: {type: string, required: true, example: "figma"}
+    produced_at: {type: string, required: true}
+    design_ref: {type: string, required: true, description: human-readable reference (no live link required)}
+    product: {type: enum, values: [scalesignals, vantage], required: true, description: which product this design serves}
+    spine_phase: {type: string, required: true, example: "LS0"}
+  design_intent:
+    problem: {type: string, required: true}
+    audience: {type: string, required: true, description: must match the product's audience}
+    summary: {type: string, required: true}
+  screens:
+    type: list
+    item:
+      name: {type: string, required: true}
+      purpose: {type: string, required: true}
+      states_covered: {type: list, description: e.g. empty, loading, error, success}
+  trust_and_evidence_ux:
+    shows_sources: {type: boolean, required: true, description: "does the design surface evidence/sources?"}
+    shows_uncertainty: {type: boolean, required: true, description: "does it communicate uncertainty honestly?"}
+    avoids_overclaiming: {type: boolean, required: true}
+  boundaries_respected:
+    no_founder_private_in_vantage_design: {type: boolean, required: true}
+    no_implied_provider_approval: {type: boolean, required: true}
+  approval:
+    requires_ben_approval: {type: boolean, required: true, default: true}
+  open_questions:
+    type: list

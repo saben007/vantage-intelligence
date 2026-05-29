@@ -1,0 +1,73 @@
+# Apius pilot — provider candidates (candidates only).
+# Naming a provider here is CANDIDATE ANALYSIS under evidence-rules. It is NOT
+# endorsement, NOT approval, NOT a fit claim, and represents NO contact.
+# Status values follow provider-intelligence/provider-promotion-gates.yaml.
+
+meta:
+  pilot: apius
+  represents_approval: false
+  represents_contact: false
+  implies_fit: false
+  last_updated: "2026-05-29"
+  governed_by:
+    - provider-intelligence/evidence-rules.yaml
+    - provider-intelligence/provider-promotion-gates.yaml
+
+candidates:
+  - id: PC-HAVAIC
+    name: HAVAÍC
+    status: action-candidate-proposed
+    direction: >-
+      Likely priority private / action route, PENDING controlled validation.
+      Proposed for Ben's attention; not approved.
+    requires_before_status_change:
+      - controlled validation
+      - gates PG-001..PG-005 passed
+      - PG-006 explicit Ben approval
+    fit_claim: none (no unsupported fit claim)
+    contact: none
+
+  - id: PC-AAIC
+    name: AAIC Africa Healthcare Fund
+    status: assessed
+    direction: >-
+      Relevant candidate, but its PUBLIC capital intake route is unclear.
+    open_questions:
+      - how capital intake actually works for this fund
+      - whether an accessible route exists for a company like Apius
+    note: route-uncertainty caps confidence; see evidence-rules ER-004/ER-005
+    fit_claim: none
+    contact: none
+
+  - id: PC-IDC-CMIMP
+    name: IDC Chemicals, Medical & Industrial Mineral Products SBU
+    status: assessed-conditional
+    direction: >-
+      Conditional ONLY. Official route visibility does NOT make it commercially
+      preferable. Must be assessed before any promotion.
+    must_assess:
+      - funding criteria
+      - likely friction
+      - funding amount
+      - use of funds
+      - evidence burden
+    note: visible public route is not, by itself, a positive signal (ER-004/ER-005)
+    fit_claim: none
+    contact: none
+
+  - id: PC-GREENROCK
+    name: Green Rock
+    status: excluded-on-current-evidence
+    direction: >-
+      NOT appropriate for Apius on current accepted evidence: supported
+      geography is Brazil / Latin America rather than South Africa.
+    basis: geography mismatch (negative finding recorded with full rigour, ER-008)
+    fit_claim: none
+    contact: none
+
+summary_note: >-
+  This list mixes a proposed action-candidate, assessed candidates with open
+  route questions, a conditional candidate requiring assessment, and one
+  exclusion on geography. None is approved. The first-value requirement of
+  "three credible providers or pathways" is tracked against accepted evidence;
+  gaps are recorded in missing-evidence.yaml.
